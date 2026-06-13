@@ -1,4 +1,4 @@
-# CUDA-MART ⚡
+# CUDA-MART
 
 [![CUDA](https://img.shields.io/badge/CUDA-Enabled-76B900?style=for-the-badge&logo=nvidia)](https://developer.nvidia.com/cuda-toolkit)
 [![C++](https://img.shields.io/badge/C++-17-00599C?style=for-the-badge&logo=c%2B%2B)](https://isocpp.org/)
@@ -9,7 +9,7 @@ A high-performance C++ and NVIDIA CUDA implementation of the **Multiplicative Al
 
 MART is an iterative algorithm primarily used in computed tomography (CT) and other imaging systems to reconstruct 2D images or 3D volumes from projection data. By leveraging NVIDIA GPUs, this implementation significantly accelerates the massive matrix multiplications and iterative updates required for high-resolution reconstructions.
 
-## 🚀 Features
+## Features
 
 * **GPU Accelerated:** Implements highly parallelized `__global__` CUDA kernels.
 * **2D & 3D Support:** Capable of reconstructing both flat 2D image grids and complex 3D volumes.
@@ -17,7 +17,7 @@ MART is an iterative algorithm primarily used in computed tomography (CT) and ot
 * **Dynamic Configuration:** Adjust grid sizes, iterations, and modes dynamically via the Command Line Interface (CLI).
 * **Unit Tested:** Includes foundational unit tests to ensure mathematical correctness of the iterative updates.
 
-## ⚙️ Architecture
+## Architecture
 
 The algorithm operates iteratively to correct voxel values based on the error between real captured projections and computed estimates.
 
@@ -26,7 +26,7 @@ The algorithm operates iteratively to correct voxel values based on the error be
 3. **Correction**: The ratio (or difference) between the *actual* projection and the *estimated* projection forms a correction factor.
 4. **Update**: A relaxation/damping parameter is applied, and the GPU parallelizes the multiplicative update across all voxels simultaneously.
 
-## 🛠️ Prerequisites
+## Prerequisites
 
 To compile and run this project, you will need:
 
@@ -35,7 +35,7 @@ To compile and run this project, you will need:
 * [CMake](https://cmake.org/download/) (v3.18 or higher).
 * C++17 compatible compiler (e.g., `MSVC` for Windows, `GCC/Clang` for Linux).
 
-## 🏗️ Building from Source
+## Building from Source
 
 Clone the repository and build using CMake:
 
@@ -52,7 +52,7 @@ cmake ..
 cmake --build . --config Release
 ```
 
-## 💻 Usage
+## Usage
 
 Run the compiled executable with standard command-line flags.
 
@@ -75,7 +75,7 @@ Run the compiled executable with standard command-line flags.
 | `--iters <N>` | Number of correction iterations | `10` |
 | `--out <file>` | Path to save the resulting binary output | *(none)* |
 
-## 🧪 Running Tests
+## Running Tests
 
 The project includes mathematical unit tests configured via CTest.
 
@@ -84,6 +84,6 @@ cd build
 ctest -C Release -V
 ```
 
-## 📜 License
+## License
 
 This project is open-source and available under the [MIT License](LICENSE).
